@@ -32,5 +32,16 @@ document.getElementById('key-pad').addEventListener('click', function(event){
 })
 
 document.getElementById('submit-btn').addEventListener('click', function(){
-    console.log('dasdsadsad')
+    const pin = document.getElementById('display-pin').value
+    const typedNumbers = document.getElementById('typed-numbers').value
+    const successedDiv = document.getElementById('notify-success')
+    const failedDiv = document.getElementById('notify-fail')
+
+    if(pin === typedNumbers){
+        failedDiv.style.display = 'none'
+        successedDiv.style.display = 'block'
+    }else{
+        failedDiv.style.display = 'block'
+        successedDiv.style.display = 'none'
+    }
 })
